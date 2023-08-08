@@ -14,3 +14,4 @@ npx create-expo-app -e with-router
 - [Expo Router: Repo](https://github.com/expo/router)
 - 
 - tutorial link https://www.youtube.com/watch?v=mJ3bGvy0WAY
+- @1:09 but not displaying logo or company name
