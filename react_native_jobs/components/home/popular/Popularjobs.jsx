@@ -14,7 +14,8 @@ const Popularjobs = () => {
     num_pages: 1,
   })
 
-  console.log(data)
+  console.log("whole data:", data)
+  // console.log("Single item:",item)
 
   return (
     <View style={styles.container}>
@@ -27,21 +28,19 @@ const Popularjobs = () => {
       <View style={styles.cardsContainer}>
         {isLoading ? (
           <ActivityIndicator size="large" color={COLORS.primary} />
-          ) : error ? (
-            <Text>Something went wrong</Text>
-          ) : (
-            <FlatList 
-              data={[1,2,3,4]}
-              renderItem={({ item }) => (
-                <PopularJobCard
-                  item={item}
-                />
-              )}
-              keyExtractor={item => item?.job_id}
-              contentContainerStyle={{ columnGap: SIZES.medium}}
-              horizontal
-            />
-          )}
+        ) : error ? (
+          <Text>Something went wrong</Text>
+        ) : (
+          <FlatList
+            data={data.slice(0, 8)}
+            renderItem={({ item }) => (
+              <PopularJobCard item={item} />
+            )}
+            keyExtractor={item => String(item?.job_id)}
+            contentContainerStyle={{ columnGap: SIZES.medium }}
+            horizontal
+          />
+        )}
       </View>
     </View>
   )
