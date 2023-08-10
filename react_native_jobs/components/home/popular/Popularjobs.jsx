@@ -14,7 +14,13 @@ const Popularjobs = () => {
     num_pages: 1,
   })
 
-  console.log("whole data:", data)
+  const [jobs, setJobs] = useState()
+
+  const hadleCardPress = (item) => {
+
+    
+  }
+  // console.log("whole data:", data)
   // console.log("Single item:",item)
 
   return (
